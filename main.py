@@ -194,10 +194,11 @@ class App(object):
             pygame.draw.line(self.simulation_surface, COLOR_GREY, (0, h), (width, h))
 
     def draw_edge(self):
+        # print self.board.get_width(), self.board.get_height()
         pygame.draw.line(self.simulation_surface, COLOR_BLACK, (self.board.get_width() * (CELL_WIDTH + CELL_GAP), 0),
                          (self.board.get_width() * (CELL_WIDTH + CELL_GAP),
                           self.board.get_height() * (CELL_HEIGHT + CELL_GAP)))
-        pygame.draw.line(self.simulation_surface, COLOR_BLACK, (0, self.board.get_width() * (CELL_WIDTH + CELL_GAP)),
+        pygame.draw.line(self.simulation_surface, COLOR_BLACK, (0, self.board.get_height() * (CELL_HEIGHT + CELL_GAP)),
                          (self.board.get_width() * (CELL_WIDTH + CELL_GAP),
                           self.board.get_height() * (CELL_HEIGHT + CELL_GAP)))
 

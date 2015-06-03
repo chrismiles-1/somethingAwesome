@@ -1,0 +1,40 @@
+#!/usr/bin/sh
+
+# Author: Chris Miles
+# Date:   8-Apr-2015
+# Distributed Under: Creative Commons
+
+# Cellular Automaton Simulation:
+# Conway's Game of Life (see: Wikipedia entry)
+# Goals of the program:
+# 1. allows editing of initial configurations of CGL
+#     2. allows viewing and saving of initial seed
+#     3. allows simulation of CGL based on initial seed
+#     4. allows saving of each iteration as an image file (BMP?)
+
+import board
+
+
+def main():
+    seed = [[0, 0, 0, 0, 0],
+             [0, 0, 0, 0, 0],
+             [0, 1, 1, 1, 0],
+             [0, 0, 0, 0, 0],
+             [0, 0, 0, 0, 0]]
+
+    sampleBoard = board.LifeBoard(5, 5)
+    sampleBoard.setBoard(seed)
+    print sampleBoard
+    print "###"
+    
+    sampleBoard.run()
+    print sampleBoard
+    print "###"
+    
+    sampleBoard.run()
+    print sampleBoard
+    print "###"
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,31 @@
+basic rules:
+rule 1: live cells dies if surrounded by more than 3 live cells
+rule 2: live cells lives if surrounded by exactly 2 or 3 live cells
+rule 3: live cells dies if surrounded by less than 1 live cells
+rule 4: dead cells becomes alive if surrounded by 3 live cells
+
+
+Any live cell with fewer than two live neighbours dies, as if caused by under-population.
+Any live cell with two or three live neighbours lives on to the next generation.
+Any live cell with more than three live neighbours dies, as if by overcrowding.
+Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
+
+to check surrounding cells:
+check N,  if y >= 0
+check NE, if y >= 0, x <= MAX_WIDTH
+check E,  if x <= MAX_WIDTH
+check SE, if y <= MAX_HEIGHT, x <= MAX_WIDTH
+check S,  if y <= MAX_HEIGHT
+check SW, if y <= MAX_HEIGHT, x >= 0
+check W,  if x >= 0
+check NW, if y >= 0, x >= 0
+
+Using the MVC design:
+	The model is the board and how the simulation runs
+	The view is the pygame/sdl frontend
+	The control is shared with the pygame frontend, in the form of GUI controls
+
+To get the current simulation frame to save as an image, use 2 or 3 different frames within the window. The different frames:
+	1. controls
+	2. simulation/board
+	3. status

@@ -9,8 +9,8 @@ class LifeBoard:
 
     def set_board(self, board):
         self.board = board
-        self.width = len(board)
-        self.height = len(board[0])
+        self.width = len(board[0])
+        self.height = len(board)
 
     def get_board(self):
         return self.board
